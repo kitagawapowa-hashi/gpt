@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ask OpenAI a Question</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Ask OpenAI a Question</h1>
+
+    <!-- Form to submit a question -->
+    <form method="POST">
+        <label for="question">Your Question:</label>
+        <input type="text" id="question" name="question" placeholder="Ask anything..." required>
+        <button type="submit">Submit</button>
+    </form>
+
+    <!-- Display the question and response after form submission -->
+    {% if question %}
+        <h2>Question: {{ question }}</h2>
+        <h3>Response: {{ response }}</h3>
+    {% endif %}
+</body>
+</html>
